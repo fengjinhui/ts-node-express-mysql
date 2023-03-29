@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS", // 生成代码的模板标准
+    "esModuleInterop": true, // 允许export=导出，由import from 导入
+    "target": "es6", // 目标语言的版本
+    "noImplicitAny": true, // 不允许隐式的any类型
+    "noUnusedLocals": false, // 检查只声明、未使用的局部变量(只提示不报错)
+    "noUnusedParameters": false, // 检查未使用的函数参数(只提示不报错)
+    "moduleResolution": "node", // 模块解析策略，ts默认用node的解析策略，即相对的方式导入
+    "removeComments": true, // 删除注释
+    "sourceMap": false, // 生成目标文件的sourceMap文件
+    "outDir": "./dist", // 指定输出目录
+    "baseUrl": "./", // 解析非相对模块的基地址，默认是当前目录
+    "paths": {
+      // 路径映射，相对于baseUrl
+      "*": ["node_modules/*"]
+    }
+  },
+  // "files": [],// ts文件需要被编译，类型为数组，相对路径或绝对路径，不支持匹配模式
+  "include": ["src/**/*", "src/**/*.d.ts"], // ts文件需要被编译，支持glob匹配模式
+  "exclude": ["node_modules"] // 其内的文件是排除在外，不被编译，files中的文件，是不会被exclude给过滤掉
+}
